@@ -1,0 +1,51 @@
+<div>
+
+<h1>CAPTION IT!</h1>
+
+<h4>Categories:</h4>
+
+
+<% @topics.each do |topic| %>
+  <a href="/topics/<%= topic.id %>">
+    <%= topic.label %> </a>
+    [<%= topic.num_images %> images]  <br>
+<% end %>
+<br>
+
+
+</div>
+
+
+<!-- 
+<button>
+  <a href="/comics/new">
+    <div>Add New Image</div>
+  </a>
+</button>
+<br>
+
+<button>
+  <a href="/comics">
+    <div>All Images</div>
+  </a>
+</button>
+
+<br>
+<button>
+  <a href="/comics/<%= @random_comic.id %>">
+    <div>Shuffle</div>
+  </a>
+</button>
+<br>
+<button>
+  <a href="/">
+    <div>Home</div>
+  </a>
+</button>
+<%= form_with url: "/logout", method: "delete" do |f| %>
+  <%= f.submit "logout" %>
+<% end %>
+
+-->
+
+

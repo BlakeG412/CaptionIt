@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CaptionIt</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag  'application', media: 'all' %>
+  </head>
+  <body>
+    <ul>
+      <% unless session[:user_id] == nil %>
+      <li>    </li><br>
+      <li> <%= link_to "Home", "/" %> </li>
+      <li> <%= link_to "Profile", "/users/#{session[:user_id]}" %> </li>
+      <li> <%= link_to "Add Image", "/comics/new" %> </li>
+      <li> <%= link_to "Shuffle Image", "/comics/#{Comic.all.sample.id}" %> </li>
+      <li> <%= link_to "Images","/comics" %> </li>
+      <li> <%= link_to "Categories", "/topics"%> </li>
+      <li> <%= link_to "Users", "/users" %> </li>
+      <li> <%= link_to "Logout", "/logout" %> </li>
+      <% end %>
+    </ul>
+    <%= yield %>
+  </body>
+</html>
+
